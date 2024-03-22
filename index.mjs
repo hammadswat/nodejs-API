@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
 import express from "express"
-import routes from "./routs/index.mjs"
+import routes from "./routes/index.mjs"
 import db from './config/db.mjs'
 
 const app = express( )

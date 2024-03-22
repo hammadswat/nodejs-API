@@ -43,7 +43,7 @@ router.put('/login', async (req, res) => {
         const token = user.generateToken();
         
         if (!token) {
-            return res.status(500).send({ message: 'Failed to generate token!' });
+            return res.status(401).send({ message: 'Failed to generate token!' });
         }
 
         // Update user with new token
@@ -54,7 +54,7 @@ router.put('/login', async (req, res) => {
         res.send({ message: 'User logged in successfully!', token });
     } catch (error) {
         console.error("Error logging in:", error);
-         res.status(500).send({ message: 'Internal server error' });
+         res.status(401).send({ message: 'Internal server error' });
     }
 });
 
